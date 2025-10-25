@@ -1,0 +1,38 @@
+# Schema and Query in DB Fiddle
+
+-- inner join table
+SELECT 
+ c.customer_name,
+ c.address,
+ o.date_orders,
+ o.fruit_ice_order AS customer_orders,
+ o.price_per_cup,
+ o.total_price
+FROM customers c
+INNER JOIN orders_fruit_ice o
+  ON c.id = o.id_customer
+ORDER BY o.date_orders ASC;
+
+[The table below](Table as markdown)
+| customer_name      | address      | date_orders | customer_orders | price_per_cup | total_price |
+| ------------------ | ------------ | ----------- | --------------- | ------------- | ----------- |
+| Levin              | Karawaci     | 2025-10-20  | 2               | 4.45          | 8.90        |
+| Lia                | Kavling      | 2025-10-20  | 1               | 4.45          | 4.45        |
+| June               | Senayan      | 2025-10-21  | 4               | 4.45          | 17.80       |
+| June               | Senayan      | 2025-10-22  | 2               | 4.45          | 8.90        |
+| Lia                | Kavling      | 2025-10-22  | 3               | 4.45          | 13.35       |
+| June               | Senayan      | 2025-10-23  | 1               | 4.45          | 4.45        |
+| Levin              | Karawaci     | 2025-10-23  | 2               | 4.45          | 8.90        |
+| Lia                | Kavling      | 2025-10-23  | 1               | 4.45          | 4.45        |
+| Heni               | New Karawaci | 2025-10-23  | 4               | 4.45          | 17.80       |
+| Maya               | Karawaci     | 2025-10-24  | 1               | 4.45          | 4.45        |
+| Impulsive Customer |              | 2025-10-24  | 1               | 4.45          | 4.45        |
+| June               | Senayan      | 2025-10-24  | 16              | 4.45          | 71.20       |
+| Lia                | Kavling      | 2025-10-25  | 5               | 4.45          | 22.25       |
+
+
+## The link below
+https://www.db-fiddle.com/f/3XCrRavwNy8aeSDdXtVpP6/2
+
+
+-

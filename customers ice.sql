@@ -1,3 +1,6 @@
+# Customers Fruit ice Table 
+## Schema, Insert, and Select Query
+  
 --- used schema in DB fiddle
 create table customers (
   id int primary key,
@@ -13,5 +16,11 @@ insert into customers (id, customer_name, phone_number, address) values
 (4, 'June', '08-7800', 'Senayan'),
 (5, 'Lia', '08-2459', 'Kavling');
 
+SELECT*
+ FROM customers;
+
+
+## Query Results
+![Table Results](customer ice table.PNG)
 --- the link below
 [View on DB Fiddle](https://www.db-fiddle.com/f/3XCrRavwNy8aeSDdXtVpP6/0)

@@ -1,6 +1,7 @@
 **Schema (MySQL v5.7)**
-  # Schmema and query in DB Fiddle  
-     -- db orders
+  # Schema and query in DB Fiddle  
+
+-- db orders
      create table orders_fruit_ice (
        id int primary key,
        id_customer int,
@@ -24,26 +25,31 @@
     (010, 2, '2025-10-24', 1, 4.45, 4.45);
 
 // adding customer information and orders after one day
-    -- db insert customer
+-- db insert customer
     insert into customers (id, customer_name, phone_number, address) values
     (6, 'Emy', '08-0192', 'Perumnas');
     
     insert into customers (id, customer_name) values
     (0, 'Impulsive Customer');
     
-    -- db insert orders
+-- db insert orders
     insert into orders_fruit_ice (id, id_customer, date_orders, fruit_ice_order, price_per_cup, total_price) values 
     (011, 0, '2025-10-24', 1, 4.45, 4.45),
     (012, 4, '2025-10-24', 16, 4.45, 71.20),
     (013, 5, '2025-10-25', 5, 4.45, 22.25);
     
 ---
-**Query #1**
+**Query**
 
-    -- db customers select
+-- db customers select
     SELECT*
      FROM customers;
 
+ -- db orders select
+    SELECT* FROM orders_fruit_ice;
+
+**the results**
+#1. customers table
 | id  | customer_name      | phone_number | address      |
 | --- | ------------------ | ------------ | ------------ |
 | 0   | Impulsive Customer |              |              |
@@ -54,12 +60,8 @@
 | 5   | Lia                | 08-2459      | Kavling      |
 | 6   | Emy                | 08-0192      | Perumnas     |
 
----
-**Query #2**
 
-    -- db orders select
-    SELECT* FROM orders_fruit_ice;
-
+#2. orders_fruit_ice table
 | id  | id_customer | date_orders | fruit_ice_order | price_per_cup | total_price |
 | --- | ----------- | ----------- | --------------- | ------------- | ----------- |
 | 1   | 3           | 2025-10-20  | 2               | 4.45          | 8.90        |
@@ -78,7 +80,5 @@
 
 
 ## The link below
-[View on DB Fiddle](https://www.db-fiddle.com/f/3XCrRavwNy8aeSDdXtVpP6/3)**Schema (MySQL v5.7)**
-
-  
-[View on DB Fiddle](https://www.db-fiddle.com/f/3XCrRavwNy8aeSDdXtVpP6/3)v
+[View on DB Fiddle](https://www.db-fiddle.com/f/3XCrRavwNy8aeSDdXtVpP6/3)
+//copy as markdown or markdown data//

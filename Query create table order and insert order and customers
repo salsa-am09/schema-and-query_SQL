@@ -1,0 +1,84 @@
+**Schema (MySQL v5.7)**
+  # Schmema and query in DB Fiddle  
+     -- db orders
+     create table orders_fruit_ice (
+       id int primary key,
+       id_customer int,
+       date_orders date,
+       fruit_ice_order int,
+       price_per_cup decimal(10,2),
+       total_price decimal(10,2),
+       foreign key (id_customer) references customers(id)
+      );
+    
+    insert into orders_fruit_ice (id, id_customer, date_orders, fruit_ice_order, price_per_cup, total_price) values 
+    (001, 3, '2025-10-20', 2, 4.45, 8.90),
+    (002, 5, '2025-10-20', 1, 4.45, 4.45),
+    (003, 4, '2025-10-21', 4, 4.45, 17.80),
+    (004, 4, '2025-10-22', 2, 4.45, 8.90),
+    (005, 5, '2025-10-22', 3, 4.45, 13.35),
+    (006, 1, '2025-10-23', 4, 4.45, 17.80),
+    (007, 4, '2025-10-23', 1, 4.45, 4.45),
+    (008, 3, '2025-10-23', 2, 4.45, 8.90),
+    (009, 5, '2025-10-23', 1, 4.45, 4.45),
+    (010, 2, '2025-10-24', 1, 4.45, 4.45);
+
+// adding customer information and orders after one day
+    -- db insert customer
+    insert into customers (id, customer_name, phone_number, address) values
+    (6, 'Emy', '08-0192', 'Perumnas');
+    
+    insert into customers (id, customer_name) values
+    (0, 'Impulsive Customer');
+    
+    -- db insert orders
+    insert into orders_fruit_ice (id, id_customer, date_orders, fruit_ice_order, price_per_cup, total_price) values 
+    (011, 0, '2025-10-24', 1, 4.45, 4.45),
+    (012, 4, '2025-10-24', 16, 4.45, 71.20),
+    (013, 5, '2025-10-25', 5, 4.45, 22.25);
+    
+---
+**Query #1**
+
+    -- db customers select
+    SELECT*
+     FROM customers;
+
+| id  | customer_name      | phone_number | address      |
+| --- | ------------------ | ------------ | ------------ |
+| 0   | Impulsive Customer |              |              |
+| 1   | Heni               | 08-2145      | New Karawaci |
+| 2   | Maya               | 08-7356      | Karawaci     |
+| 3   | Levin              | 08-9651      | Karawaci     |
+| 4   | June               | 08-7800      | Senayan      |
+| 5   | Lia                | 08-2459      | Kavling      |
+| 6   | Emy                | 08-0192      | Perumnas     |
+
+---
+**Query #2**
+
+    -- db orders select
+    SELECT* FROM orders_fruit_ice;
+
+| id  | id_customer | date_orders | fruit_ice_order | price_per_cup | total_price |
+| --- | ----------- | ----------- | --------------- | ------------- | ----------- |
+| 1   | 3           | 2025-10-20  | 2               | 4.45          | 8.90        |
+| 2   | 5           | 2025-10-20  | 1               | 4.45          | 4.45        |
+| 3   | 4           | 2025-10-21  | 4               | 4.45          | 17.80       |
+| 4   | 4           | 2025-10-22  | 2               | 4.45          | 8.90        |
+| 5   | 5           | 2025-10-22  | 3               | 4.45          | 13.35       |
+| 6   | 1           | 2025-10-23  | 4               | 4.45          | 17.80       |
+| 7   | 4           | 2025-10-23  | 1               | 4.45          | 4.45        |
+| 8   | 3           | 2025-10-23  | 2               | 4.45          | 8.90        |
+| 9   | 5           | 2025-10-23  | 1               | 4.45          | 4.45        |
+| 10  | 2           | 2025-10-24  | 1               | 4.45          | 4.45        |
+| 11  | 0           | 2025-10-24  | 1               | 4.45          | 4.45        |
+| 12  | 4           | 2025-10-24  | 16              | 4.45          | 71.20       |
+| 13  | 5           | 2025-10-25  | 5               | 4.45          | 22.25       |
+
+
+## The link below
+[View on DB Fiddle](https://www.db-fiddle.com/f/3XCrRavwNy8aeSDdXtVpP6/3)**Schema (MySQL v5.7)**
+
+  
+[View on DB Fiddle](https://www.db-fiddle.com/f/3XCrRavwNy8aeSDdXtVpP6/3)v

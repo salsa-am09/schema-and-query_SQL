@@ -1,0 +1,23 @@
+**Query used MODE**
+
+-- to calculate total sales by publisher
+SELECT
+  publisher,
+  SUM(total) as total_sales
+FROM tutorial.global_weekly_charts_2013_2014
+GROUP BY publisher
+HAVING SUM(total) > 100000000
+ORDER BY total_sales DESC;
+
+-- to calculate in a publisher
+SELECT 
+  publisher,
+  genre,
+  COUNT(game) as total_games
+FROM tutorial.global_weekly_charts_2013_2014
+GROUP BY publisher, genre
+ORDER BY total_games ASC;
+
+
+**The link below**
+[https://app.mode.com/editor/chasalstudio/reports/ee2bcb92c2a6/queries/8ecafa841e9d]
